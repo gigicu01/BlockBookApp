@@ -8,11 +8,15 @@ import Footer from './pages/footer';
 import Feed from './pages/feed';
 import Post from './pages/Post';
 import { Container } from '@material-ui/core'
+import SignInPage from './pages/signInPage';
+import { SignOutPage } from './pages/signOutPage';
+import { supabaseClient } from "./api/supabaseClient"
 
 function App() {
   return (
     <div className='appContainer'>
     <Router>
+
       <Navbar/>
       <main>
         <Routes>
@@ -24,9 +28,32 @@ function App() {
         </Routes>
       </main>
       <Footer/>
+
     </Router>
     </div>
   );
+}
+
+// const stuff = async () => {
+//   const { data } = await supabaseClient.auth.getSession()
+//   return <div>
+//     {data.session && `you are logged in as ${data.session.user.email}`}
+//   </div>
+// }
+
+const Hoempage = () => {
+  const whatever = supabaseClient.auth.getSession().then(res => {
+      this.setState({
+        session: res.data.session?.user.email
+      })
+      const data = res.data
+      return res.data
+    })
+    
+   return <div>
+     {whatever.then && `you are logged in as ${data.session.user.email}`}
+   </div>    
+    
 }
 
 export default App;
