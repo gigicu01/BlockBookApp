@@ -7,6 +7,7 @@ import Navbar from './pages/navbar';
 import Footer from './pages/footer';
 import Feed from './pages/feed';
 import Post from './pages/Post';
+import Profile from './pages/Profile';
 import { Container } from '@material-ui/core'
 import SignInPage from './pages/signInPage';
 import { SignOutPage } from './pages/signOutPage';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signout" />
           <Route path="/" element = {<Feed/>}/>
           <Route path="/post" element = {<Post/>}/>
+          <Route path="/profile" element = {<Profile/>}/>
         </Routes>
       </main>
       <Footer/>
@@ -41,19 +43,19 @@ function App() {
 //   </div>
 // }
 
-const Hoempage = () => {
-  const whatever = supabaseClient.auth.getSession().then(res => {
-      this.setState({
-        session: res.data.session?.user.email
-      })
-      const data = res.data
-      return res.data
-    })
+//const Hoempage = () => {
+  //const whatever = supabaseClient.auth.getSession().then(res => {
+     // this.setState({
+       // session: res.data.session?.user.email
+     // })
+     // const data = res.data
+     // return res.data
+   // })
     
-   return <div>
-     {whatever.then && `you are logged in as ${data.session.user.email}`}
-   </div>    
+   //return <div>
+   //  {whatever.then && `you are logged in as ${data.session.user.email}`}
+  // </div>    
     
-}
+//}
 
 export default App;
