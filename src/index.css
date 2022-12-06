@@ -87,3 +87,15 @@ a:hover {
  form{
   margin-top: 6em;
  }
+
+ .profileMain{
+    margin-top: 6em;
+    display:flex;
+    justify-content: space-around;
+ }
+
+ .profCol{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
