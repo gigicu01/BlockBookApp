@@ -85,7 +85,45 @@ a:hover {
  }
 
  form{
+  display: flex;
+  flex-direction: column;
   margin-top: 6em;
+  justify-content: center;
+  align-items: center;
+  border: 10px;
+ }
+ 
+ .postbox {
+  display: flex;
+  justify-content: center;
+  margin-top:10px;
+ }
+
+ .postWrapper {
+  height: 500px;
+  width: 600px;
+  background-color: rgb(237, 252, 234);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  margin-top: 10em;
+ }
+ .profilepic {
+  height:60px;
+  margin-top:15px;
+  border-radius:50%;
+  background-color: black;
+ }
+ .topic {
+  width:300px;
+  margin-top:20px;
+  margin-bottom: 10px;
+ }
+
+ .postContent {
+  height: 150px;
+  width: 300px;
  }
 
  .profileMain{
