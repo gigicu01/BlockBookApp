@@ -1,46 +1,75 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SignUpPage } from './pages/signupPage';
-import { Container } from '@material-ui/core'
+import { Container } from '@material-ui/core';
 import SignInPage from './pages/signInPage';
 import { SignOutPage } from './pages/signOutPage';
-import { supabaseClient } from "./api/supabaseClient"
+import { supabaseClient } from "./api/supabaseClient";
+import { NavBar } from "./component/navBar";
+import { AuthProvider } from './contexts/authContext'
+
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/signup" element = { <SignUpPage /> } />
-        <Route path="/signin" element = { <SignInPage /> } />
-        <Route path="/signout" element = { <SignOutPage /> } />
-        <Route path="/" element = {  <HomePage />} />
-      </Routes>
-    </Router>
-  );
+    <AuthProvider>
+      <Router>
+        <NavBar />
+        <Container maxWidth="sm">
+        <Routes>
+          <Route path="/signup" element = { <SignUpPage /> } />
+          <Route path="/signin" element = { <SignInPage /> } />
+          <Route path="/signout" element = { <SignOutPage /> } />
+          <Route path="/" element = {  <HomePage />} />
+        </Routes>
+        </Container>
+      </Router>
+    </AuthProvider>
+  )
 }
 
-// const stuff = async () => {
-//   const { data } = await supabaseClient.auth.getSession()
+// const HomePage =  () => {
+//   const [data, setData] = React.useState(null);
+//   const { data } =  supabaseClient.auth.getSession()
 //   return <div>
 //     {data.session && `you are logged in as ${data.session.user.email}`}
 //   </div>
 // }
 
-const Hoempage = () => {
-  const whatever = supabaseClient.auth.getSession().then(res => {
-      this.setState({
-        session: res.data.session?.user.email
-      })
-      const data = res.data
-      return res.data
-    })
+// const Homepage = () => {
+//   const whatever = supabaseClient.auth.getSession().then(res => {
+//       this.setState({
+//         session: res.data.session?.user.email
+//       })
+//       const data = res.data
+//       return res.data
+//     })
     
-   return <div>
-     {whatever.then && `you are logged in as ${data.session.user.email}`}
-   </div>    
+//    return <div>
+//      {whatever.then && `you are logged in as ${data.session.user.email}`}
+//    </div>    
     
+// }
+
+const HomePage =  () => {
+  const [data, setData] = React.useState<any>(null);
+
+const getData = async () =>{
+  try{
+const response : any = await supabaseClient.auth.getSession();
+
+setData(response.data);
+
+     }catch(err){
+}
 }
 
-export default App;
+useEffect(()=>{getData();},[]);
+
+  return <div>
+    {data?.session && `you are logged in as ${data?.session.user.email}`}
+  </div>
+}
+
+export default App
