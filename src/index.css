@@ -39,9 +39,7 @@ a {
 
 }
 
-a:hover {
-  color: rgb(36, 100, 58);
-}
+
 
 .navImg{
   display:flex;
@@ -52,7 +50,7 @@ a:hover {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: rgb(237, 252, 234);
+  background-color: #3F51B5;
   text-align: center;
   font-size:xx-small;
  }
@@ -69,7 +67,8 @@ a:hover {
   margin: 10px;
   padding: 5px;
   border-radius: 10px;
-  background-color: rgb(237, 252, 234);
+  background-color: #3F51B5;
+  color:white;
  }
 
  .interactives{
@@ -78,10 +77,11 @@ a:hover {
  }
 
  .interactives button {
-  background-color: rgb(237, 252, 234);
+  background-color: white;
   border-radius:20px;
   padding: 4px;
   border-color: white;
+  color:3F51B5;
  }
 
  form{
@@ -102,7 +102,7 @@ a:hover {
  .postWrapper {
   height: 500px;
   width: 600px;
-  background-color: rgb(237, 252, 234);
+  background-color: #3F51B5;
   display: flex;
   align-items: center;
   justify-content: center;

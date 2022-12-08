@@ -4,7 +4,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SignUpPage } from './pages/signupPage';
 import { Container } from '@material-ui/core';
-import NavbarAJ from './pages/navbar';
 import Footer from './pages/footer';
 import Feed from './pages/feed';
 import Post from './pages/Post';
@@ -26,8 +25,8 @@ function App() {
           <Route path="/signup" element = { <SignUpPage /> } />
           <Route path="/signin" element = { <SignInPage /> } />
           <Route path="/signout" element = { <SignOutPage /> } />
-          <Route path="/" element = {  <HomePage />} />
-          <Route path="/" element = {<Feed/>}/>
+          
+          <Route path="/feed" element = {<Feed/>}/>
           <Route path="/post" element = {<Post/>}/>
           <Route path="/profile" element = {<Profile/>}/>
         </Routes>

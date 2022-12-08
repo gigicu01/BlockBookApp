@@ -53,8 +53,9 @@ export const NavBar = ({}) => {
         <div className={classes.root}>
         <AppBar position="static">
             <Toolbar>
+            <img src="bb_logo.png" alt="BlockBook Logo" height="60" />
             <Typography variant="h6" className={classes.title}>
-                    <Link underline="none" component={RouterLink} to="/" color="inherit">
+                    <Link underline="none" color="inherit">
                 BlockBook
                 </Link>
             </Typography>
@@ -73,16 +74,31 @@ export const NavBar = ({}) => {
                 </Link>
 
             }
+                
+                <Link underline="none" component={RouterLink} to="/feed" color="inherit">
+                        <Button color="inherit">
+                            Feed
+                        </Button>
+                </Link>
+                <Link underline="none" component={RouterLink} to="/post" color="inherit">
+                        <Button color="inherit">
+                            +
+                        </Button>
+                </Link>
+                
                 <IconButton color="inherit">
-                <Badge color="secondary">
-                    <NotificationsIcon />
-                </Badge>
+                  <Badge color="secondary">
+                      <NotificationsIcon />
+                  </Badge>
                 </IconButton>
-                <IconButton color="inherit">
-                <Badge color="secondary">
-                    <AccountCircle />
-                </Badge>
-                </IconButton>
+                <Link underline="none" to="/profile" component={RouterLink} color="inherit">
+                  <IconButton color="inherit">
+                  <Badge color="secondary">
+                      <AccountCircle />
+                  </Badge>
+                  </IconButton>
+                </Link>
+                
             </Toolbar>
         </AppBar>
         </div>
