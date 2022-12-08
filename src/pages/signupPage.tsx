@@ -58,7 +58,8 @@ export const SignUpPage = () => {
           label="Email"
           type="email"
           autoComplete="email"
-          variant="outlined"
+          variant="standard"
+          color="primary"
         />
       </div>
       <div>
@@ -67,11 +68,11 @@ export const SignUpPage = () => {
           label="Password"
           type="password"
           autoComplete="new-password"
-          variant="outlined"
+          variant="standard"
         />
       </div>
 
-      <Button type="submit">
+      <Button type="submit" variant="text">
           Sign up
         </Button>
     </form>

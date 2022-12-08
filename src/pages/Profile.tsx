@@ -9,7 +9,7 @@ function Profile(){ //got this navbar stuff also from The Net Ninja
     return ( 
         <div className='profileMain'>
             <div className='profCol'>
-                <img src="profile_placeholder.png" alt="Default Avatar" height="100"/>
+                <img className='profImg' src="profile_placeholder.png" alt="Default Avatar" height="100"/>
                 <h3>User Name</h3>
                 <div>
                     <p>User Age</p>
@@ -21,9 +21,9 @@ function Profile(){ //got this navbar stuff also from The Net Ninja
             <div className='profCol'>
                 <div>
                     <p>User Bio</p>
+                    <p>Top Posts</p>
                 </div>
                 <div>
-                    <p>Top Posts</p>
                     <div className='post'>
                         <span style={{ fontWeight: 'bold' }}>Username</span>
                         <p>Content of the post</p>

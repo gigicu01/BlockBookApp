@@ -1,6 +1,6 @@
 html{
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(255, 255, 255);
+  background: -webkit-radial-gradient(rgb(67, 70, 235),rgb(41, 41, 181),rgb(11, 11, 122),rgb(7, 2, 65));
 }
 
 .appContainer{
@@ -19,8 +19,14 @@ html{
   position: fixed;
   top:0;
   width: 100%;
-  background-color: rgb(237, 252, 234);
-  display: flex;
+  background-image: -webkit-repeating-linear-gradient(top, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+  -webkit-repeating-linear-gradient(top, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+  -webkit-repeating-linear-gradient(top, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+  
+  linear-gradient(180deg, hsl(0,0%,78%)  0%, 
+  hsl(0,0%,90%) 47%, 
+  hsl(0,0%,78%) 53%,
+  hsl(0,0%,70%)100%);  display: flex;
   justify-content: space-between;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: large;
@@ -40,7 +46,7 @@ a {
 }
 
 a:hover {
-  color: rgb(36, 100, 58);
+  color: rgb(0, 170, 255);
 }
 
 .navImg{
@@ -52,7 +58,7 @@ a:hover {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: rgb(237, 252, 234);
+  background-color: rgba(132, 193, 242, 0.934);
   text-align: center;
   font-size:xx-small;
  }
@@ -69,7 +75,8 @@ a:hover {
   margin: 10px;
   padding: 5px;
   border-radius: 10px;
-  background-color: rgb(237, 252, 234);
+  background-color: rgba(132, 193, 242, 0.934);
+  box-shadow: 5px -5px 3px rgba(10, 2, 84, 0.484);
  }
 
  .interactives{
@@ -78,20 +85,34 @@ a:hover {
  }
 
  .interactives button {
-  background-color: rgb(237, 252, 234);
+  background-image: -webkit-repeating-linear-gradient(top, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+  -webkit-repeating-linear-gradient(top, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+  -webkit-repeating-linear-gradient(top, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%),
+  
+  linear-gradient(180deg, hsl(0,0%,78%)  0%, 
+  hsl(0,0%,90%) 47%, 
+  hsl(0,0%,78%) 53%,
+  hsl(0,0%,70%)100%);  display: flex;
   border-radius:20px;
   padding: 4px;
-  border-color: white;
+  border-color: lightgray;
+ }
+
+ button:hover {
+  color:rgb(67, 70, 235)
  }
 
  form{
-  display: flex;
+  background-color:rgb(13, 125, 223);
+  display:flex;
   flex-direction: column;
   margin-top: 6em;
   justify-content: center;
   align-items: center;
   border: 10px;
+  
  }
+
  
  .postbox {
   display: flex;
@@ -102,7 +123,7 @@ a:hover {
  .postWrapper {
   height: 500px;
   width: 600px;
-  background-color: rgb(237, 252, 234);
+  background-color: rgb(13, 125, 223);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +154,20 @@ a:hover {
  }
 
  .profCol{
+    background-color: rgba(132, 193, 242, 0.934);
+    width: 150px;
+    border-radius: 25px;
+    align-items: center;
     display:flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+
+  .profImg{
+    display: inline-block;
+    position: relative; 
+    width: 100px; height: 100px;
+    overflow: hidden; 
+    border-radius: 50%;  
+
   }
