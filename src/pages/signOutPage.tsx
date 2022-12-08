@@ -1,24 +1,55 @@
-import { Button } from "@material-ui/core";
+import { Button, Link, makeStyles, Paper, Typography } from "@material-ui/core";
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import { supabaseClient } from "../api/supabaseClient";
+import { useAuth } from "../contexts/authContext";
+
+const useStyles = makeStyles((theme) => ({
+    paper: {
+      margin: "4em 0 0 0",
+      padding: "6em 0 10em 0",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      "& > *": {
+        margin: "0.6em 0 0.6em 0"
+      }
+    },
+    actionsContainer: {
+      margin: "1em 0 0 0",
+    },
+  }));
 
 export const SignOutPage = () => {
-    useEffect(()=> {
-        supabaseClient.auth.signOut()
+    const classes = useStyles();
+    const {setSessionData} = useAuth()
+   useEffect(()=> {
+        console.log("ajutor ca ma omor")
+        setSessionData(null)
+    const signout = async () => {
+        await supabaseClient.auth.signOut().then(console.log);
+    }
+    signout()
     },[])    
 
-    return <div>
-        You've been signed out.
-        <Link to="/">
-            <Button>
-                Go to home page
-            </Button>
-        </Link>
-        <Link to="/signin">
-            <Button>
-                Sign in
-            </Button>
-        </Link>
-    </div>
-}
+    return (
+        <Paper variant="outlined" className={classes.paper}>
+          <Typography variant="h5" align="center">
+            You've been signed out
+          </Typography>
+          <div >
+            <Link underline="none" to="/" component={RouterLink} color="inherit">
+              <Button color="inherit">Go to Home Page</Button>
+            </Link>
+            <Link
+              underline="none"
+              to="/signin"
+              component={RouterLink}
+              color="inherit"
+            >
+              <Button color="inherit">Sign In</Button>
+            </Link>
+          </div>
+        </Paper>
+      );
+    };
