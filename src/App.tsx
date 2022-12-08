@@ -4,6 +4,11 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SignUpPage } from './pages/signupPage';
 import { Container } from '@material-ui/core';
+import NavbarAJ from './pages/navbar';
+import Footer from './pages/footer';
+import Feed from './pages/feed';
+import Post from './pages/Post';
+import Profile from './pages/Profile';
 import SignInPage from './pages/signInPage';
 import { SignOutPage } from './pages/signOutPage';
 import { supabaseClient } from "./api/supabaseClient";
@@ -22,11 +27,16 @@ function App() {
           <Route path="/signin" element = { <SignInPage /> } />
           <Route path="/signout" element = { <SignOutPage /> } />
           <Route path="/" element = {  <HomePage />} />
+          <Route path="/" element = {<Feed/>}/>
+          <Route path="/post" element = {<Post/>}/>
+          <Route path="/profile" element = {<Profile/>}/>
         </Routes>
         </Container>
+        <Footer/>
       </Router>
     </AuthProvider>
   )
+
 }
 
 // const HomePage =  () => {
@@ -36,7 +46,6 @@ function App() {
 //     {data.session && `you are logged in as ${data.session.user.email}`}
 //   </div>
 // }
-
 // const Homepage = () => {
 //   const whatever = supabaseClient.auth.getSession().then(res => {
 //       this.setState({
@@ -64,6 +73,7 @@ setData(response.data);
      }catch(err){
 }
 }
+
 
 useEffect(()=>{getData();},[]);
 
