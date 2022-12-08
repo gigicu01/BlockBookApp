@@ -12,7 +12,7 @@ function Post(){ //got this navbar stuff also from The Net Ninja
         <div className="postWrapper">
           <form>
           <img src="bb_logo.png" alt="BlockBook Logo" height="60"/>
-          <img src="bb_logo.png" alt="Profile Picture" height="60" className = "profilepic"/>
+          <img src="profile_placeholder.png" alt="Profile Picture" height="60" className = "profilepic"/>
             <div>
                 <input type="text" name="topic" className="topic" placeholder='Topic' />
             </div>

@@ -45,9 +45,7 @@ a {
 
 }
 
-a:hover {
-  color: rgb(0, 170, 255);
-}
+
 
 .navImg{
   display:flex;
@@ -58,7 +56,7 @@ a:hover {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: rgba(132, 193, 242, 0.934);
+  background-color: #3F51B5;
   text-align: center;
   font-size:xx-small;
  }
